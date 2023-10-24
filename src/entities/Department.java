@@ -2,7 +2,7 @@ package entities;
 
 public class Department {
 
-    // Classe departament que possue apenas um Nome como parametro
+    // Classe department que possue apenas um Nome como parametro
     private String name;
 
     public Department(String name) {
