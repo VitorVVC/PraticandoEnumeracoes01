@@ -1,31 +1,33 @@
 package entities;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import static application.Util.dtf;
 
 public class HourContract {
 
+    // Criando classe hourContract que tem como dados, uma data, valor por hora e horas trabalhadas
     private LocalDate date;
     private Double valuePerHour;
     private Integer hours;
 
+    // Construtor
     public HourContract(LocalDate date, Double valuePerHour, Integer hours) {
         this.date = date;
         this.valuePerHour = valuePerHour;
         this.hours = hours;
     }
 
+    // Sobrescrita do método toString para uma melhoria em seu print
     @Override
     public String toString() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return String.format("Date: %s%nValuePerHour: %.2f%nHours: %d", dtf.format(date), valuePerHour, hours);
     }
-
+    // Método para calcular um valor total de um contrato
     public double totalValue() {
         return valuePerHour * hours;
     }
 
+    // Getters & Setters
     public LocalDate getDate() {
         return date;
     }
